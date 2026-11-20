@@ -14,12 +14,16 @@ BookVerse is a JavaFX desktop application for running a small library. It keeps 
 - [Contributing](#contributing)
 - [License](#license)
 
-## 📋 Features
+## Features
 
-- 📖 **Book Management:** Keep track of available books, genres, and availability statuses.
-- 👥 **Member Directory:** Register, view, and manage library patrons.
-- 🔐 **User Authentication:** System administrator access logs to secure the management interface.
-- 💾 **Flat-File Persistence:** Data is automatically saved to and loaded from local `.txt` files.
+- **Accounts**: sign up and log in with an email and password from pop-up dialogs.
+- **Dashboard**: progress bars for books issued, dues paid and fines.
+- **Inventory**: browse the catalogue, sort it by author, title or availability, and add new books.
+- **Issuing**: search by book name or author and pick a due date. A member can have at most 3 books out at once, and issuing is refused while their total due is above 1000 TK.
+- **Returns and fines**: overdue books are fined 60 TK per day. A fine stops growing once the book is returned, and it can then be paid in full or in part, but never overpaid.
+- **Members**: a member list, a "Become a member" form (name, profession, contact) and a "My Profile Card" view.
+- **Community chat**: a socket-based chat room backed by a small chat server.
+- **Plain-text storage**: books, members and accounts are saved to `.txt` files in the project folder.
 
 ## 💻 Usage Preview
 
