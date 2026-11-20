@@ -129,6 +129,14 @@ JUnit 5 is configured in `build.gradle.kts`, but the project has no tests yet, s
 - **Libraries**: ControlsFX, FormsFX, ValidatorFX, Ikonli, BootstrapFX, TilesFX and FXGL.
 - **Plain-text files** for storage and plain Java sockets for chat.
 
+## Known limitations
+
+- Passwords are saved and compared in plain text. Do not reuse a real password.
+- There is no separate admin role; every logged-in user sees the same screens.
+- The chat server must be started by hand, and the chat client always connects to `localhost`.
+- The project has no automated tests.
+- Data files are plain text without locking, so run only one copy of the app against a folder.
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [Issues page](https://github.com/Kairo-2081/LibraryManager/issues).
