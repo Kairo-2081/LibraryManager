@@ -74,49 +74,34 @@ Example book lines:
 
 The data files in the repository hold demo records. Passwords in `user_data.txt` are plain text.
 
-## 🚀 Getting Started
+## Getting started
 
 ### Prerequisites
 
-- **Java Development Kit (JDK):** Version 11 or higher recommended.
-- **Terminal / Command Prompt**
+- JDK 21. The Gradle build requests a Java 21 toolchain.
+- An internet connection on the first run, so Gradle can download itself (8.13), JavaFX 21.0.6 and the libraries.
 
-### Installation
+### Install and run
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Kairo-2081/LibraryManager.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd LibraryManager
-   ```
-
-### Running the Application
-
-You can execute the application using the included Gradle wrapper.
-
-**On Windows:**
-```cmd
-gradlew.bat run
+```bash
+git clone https://github.com/Kairo-2081/LibraryManager.git
+cd LibraryManager
 ```
 
-**On macOS / Linux:**
+On macOS or Linux:
+
 ```bash
 chmod +x gradlew
 ./gradlew run
 ```
 
-### Building & Testing
+On Windows:
 
-- **Build project:**
-  ```bash
-  ./gradlew build
-  ```
-- **Run unit tests:**
-  ```bash
-  ./gradlew test
-  ```
+```cmd
+gradlew.bat run
+```
+
+Start the app from the repository root. The data files are opened by relative path, so a different working directory means the app reads and creates its files somewhere else.
 
 ## 🛠️ Built With
 
