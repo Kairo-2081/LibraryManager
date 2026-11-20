@@ -53,13 +53,26 @@ BookVerse is a JavaFX desktop application for running a small library. It keeps 
 └── gradlew, gradlew.bat         Gradle wrapper
 ```
 
-## 💾 Data Persistence Format
+## Data files
 
-The system uses plain-text files with pipe-delimited (`|`) records to maintain state:
+The app reads and writes three comma-separated files in the folder it is started from. Fields are split on commas, so a value cannot contain a comma.
 
-- **`library_data.txt`**: `BookID|Title|Author|Genre|IsAvailable`
-- **`members.txt`**: `MemberID|Name|Email|JoinDate`
-- **`user_data.txt`**: `UserID|Username|PasswordHash|Role`
+| File | One line per | Fields |
+| --- | --- | --- |
+| `library_data.txt` | book | `id,title,author,status,totalIssues,issueDate,dueDate,fine,issuedTo` |
+| `members.txt` | member | `name,profession,issues,contact,mail,fine,freq,blockStatus,totalPaid,totalDue,finedCount,paymentHistory` |
+| `user_data.txt` | account | `email,password` |
+
+Rules for the book file: `status` is `Available` or `Issued`, dates are `yyyy-MM-dd` or `none`, and `issuedTo` holds the member's email or `none`.
+
+Example book lines:
+
+```text
+101,Dune,Frank Herbert,Available,0,none,none,0.0,none
+102,Emma,Jane Austen,Issued,3,2026-04-08,2026-04-14,0.0,jane@example.com
+```
+
+The data files in the repository hold demo records. Passwords in `user_data.txt` are plain text.
 
 ## 🚀 Getting Started
 
