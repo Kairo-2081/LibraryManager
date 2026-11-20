@@ -1,122 +1,152 @@
-# 📚 Library Manager
+# BookVerse: Library Management System
 
-A lightweight, console-based **Library Management System** built with **Kotlin/Java** and managed via the **Gradle** build system. This project demonstrates basic CRUD operations, object-oriented programming principles, and flat-file data persistence without the overhead of a heavy relational database.
+BookVerse is a JavaFX desktop application for running a small library. It keeps a book catalogue and member profiles, handles issuing and returning with due dates, charges fines for overdue books, and includes a community chat. Everything is saved to plain-text files, so there is no database to set up.
 
-## 📋 Table of Contents
+## Contents
 
-- [Features](#-features)
-- [Usage Preview](#-usage-preview)
-- [Repository Structure](#-repository-structure)
-- [Data Persistence Format](#-data-persistence-format)
-- [Getting Started](#-getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Running the Application](#running-the-application)
-  - [Building & Testing](#building--testing)
-- [Built With](#%EF%B8%8F-built-with)
-- [Contributing](#-contributing)
-- [License](#-license)
+- [Features](#features)
+- [Using the app](#using-the-app)
+- [Repository structure](#repository-structure)
+- [Data files](#data-files)
+- [Getting started](#getting-started)
+- [Built with](#built-with)
+- [Known limitations](#known-limitations)
+- [Contributing](#contributing)
+- [License](#license)
 
-## 📋 Features
+## Features
 
-- 📖 **Book Management:** Keep track of available books, genres, and availability statuses.
-- 👥 **Member Directory:** Register, view, and manage library patrons.
-- 🔐 **User Authentication:** System administrator access logs to secure the management interface.
-- 💾 **Flat-File Persistence:** Data is automatically saved to and loaded from local `.txt` files.
+- **Accounts**: sign up and log in with an email and password from pop-up dialogs.
+- **Dashboard**: progress bars for books issued, dues paid and fines.
+- **Inventory**: browse the catalogue, sort it by author, title or availability, and add new books.
+- **Issuing**: search by book name or author and pick a due date. A member can have at most 3 books out at once, and issuing is refused while their total due is above 1000 TK.
+- **Returns and fines**: overdue books are fined 60 TK per day. A fine stops growing once the book is returned, and it can then be paid in full or in part, but never overpaid.
+- **Members**: a member list, a "Become a member" form (name, profession, contact) and a "My Profile Card" view.
+- **Community chat**: a socket-based chat room backed by a small chat server.
+- **Plain-text storage**: books, members and accounts are saved to `.txt` files in the project folder.
 
-## 💻 Usage Preview
+## Using the app
 
-When you launch the application, you will be presented with an interactive console management menu:
+1. Start the app (see [Getting started](#getting-started)) and sign up with an email and password, then log in.
+2. Use **Become a member** to create your member profile.
+3. In **Inventory**, add books or sort the catalogue.
+4. In **Issue**, find a book, choose a due date and issue it.
+5. In **Return**, return the book. If it was overdue, the fine is now fixed and can be paid from the same screen.
+6. Open the **Dashboard** to see your issues, dues and fines at a glance.
+
+## Repository structure
 
 ```text
-========================================
-       LIBRARY MANAGEMENT SYSTEM       
-========================================
-1. View Book Catalog
-2. Add New Book
-3. Register Patron
-4. View Active Members
-5. System Admin Settings
-6. Exit
-----------------------------------------
-Select an option (1-6):
+.
+├── src/main/java/com/example/librarymanager/
+│   ├── HelloApplication.java    JavaFX application (the Gradle `run` main class)
+│   ├── Launcher.java            Plain `main` that launches HelloApplication
+│   ├── HelloController.java     Screens, login, issue/return, fines, file handling
+│   ├── Book.java, Member.java   Data models
+│   ├── ChatServer.java          Standalone chat server (port 12345)
+│   └── ChatController.java, ChatService.java, ClientHandler.java   Chat client and server plumbing
+├── src/main/resources/com/example/librarymanager/   FXML views, stylesheet and icons
+├── library_data.txt             Book catalogue
+├── members.txt                  Member profiles
+├── user_data.txt                Login accounts
+├── build.gradle.kts             Gradle build (Kotlin DSL)
+└── gradlew, gradlew.bat         Gradle wrapper
 ```
 
-## 📁 Repository Structure
+## Data files
 
-- `src/main/` — Contains the application source code logic.
-- `library_data.txt` — Plain-text data store for the book catalog.
-- `members.txt` — Plain-text data store for library member profiles.
-- `user_data.txt` — Plain-text data store for application users and administrators.
-- `build.gradle.kts` — Kotlin DSL configuration file for Gradle dependencies and builds.
+The app reads and writes three comma-separated files in the folder it is started from. Fields are split on commas, so a value cannot contain a comma.
 
-## 💾 Data Persistence Format
+| File | One line per | Fields |
+| --- | --- | --- |
+| `library_data.txt` | book | `id,title,author,status,totalIssues,issueDate,dueDate,fine,issuedTo` |
+| `members.txt` | member | `name,profession,issues,contact,mail,fine,freq,blockStatus,totalPaid,totalDue,finedCount,paymentHistory` |
+| `user_data.txt` | account | `email,password` |
 
-The system uses plain-text files with pipe-delimited (`|`) records to maintain state:
+Rules for the book file: `status` is `Available` or `Issued`, dates are `yyyy-MM-dd` or `none`, and `issuedTo` holds the member's email or `none`.
 
-- **`library_data.txt`**: `BookID|Title|Author|Genre|IsAvailable`
-- **`members.txt`**: `MemberID|Name|Email|JoinDate`
-- **`user_data.txt`**: `UserID|Username|PasswordHash|Role`
+Example book lines:
 
-## 🚀 Getting Started
+```text
+101,Dune,Frank Herbert,Available,0,none,none,0.0,none
+102,Emma,Jane Austen,Issued,3,2026-04-08,2026-04-14,0.0,jane@example.com
+```
+
+The data files in the repository hold demo records. Passwords in `user_data.txt` are plain text.
+
+## Getting started
 
 ### Prerequisites
 
-- **Java Development Kit (JDK):** Version 11 or higher recommended.
-- **Terminal / Command Prompt**
+- JDK 21. The Gradle build requests a Java 21 toolchain.
+- An internet connection on the first run, so Gradle can download itself (8.13), JavaFX 21.0.6 and the libraries.
 
-### Installation
+### Install and run
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Kairo-2081/LibraryManager.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd LibraryManager
-   ```
-
-### Running the Application
-
-You can execute the application using the included Gradle wrapper.
-
-**On Windows:**
-```cmd
-gradlew.bat run
+```bash
+git clone https://github.com/Kairo-2081/LibraryManager.git
+cd LibraryManager
 ```
 
-**On macOS / Linux:**
+On macOS or Linux:
+
 ```bash
 chmod +x gradlew
 ./gradlew run
 ```
 
-### Building & Testing
+On Windows:
 
-- **Build project:**
-  ```bash
-  ./gradlew build
-  ```
-- **Run unit tests:**
-  ```bash
-  ./gradlew test
-  ```
+```cmd
+gradlew.bat run
+```
 
-## 🛠️ Built With
+Start the app from the repository root. The data files are opened by relative path, so a different working directory means the app reads and creates its files somewhere else.
 
-- **Kotlin / Java** — Core programming languages.
-- **Gradle** — Build automation and dependency management tool using Kotlin DSL (`build.gradle.kts`).
+### Community chat
 
-## 🤝 Contributing
+The chat client connects to `localhost:12345`, so start the chat server first. It uses only the JDK, so you can run it straight from the compiled classes:
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [Issues page](https://github.com/Kairo-2081/LibraryManager/issues).
+```bash
+./gradlew classes
+java -cp build/classes/java/main com.example.librarymanager.ChatServer
+```
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+It prints `Chat Server started on port 12345`. Then launch the app as above. To chat across machines, change the host in `ChatController.java`.
 
-## 📄 License
+### Build and test
+
+```bash
+./gradlew build
+```
+
+JUnit 5 is configured in `build.gradle.kts`, but the project has no tests yet, so `./gradlew test` has nothing to run.
+
+## Built with
+
+- **Java 21** and **JavaFX 21.0.6** (controls, FXML, web, swing, media).
+- **Gradle 8.13** (wrapper) with the Java module, OpenJFX and jlink plugins. A `jlink` runtime image is configured.
+- **Libraries**: ControlsFX, FormsFX, ValidatorFX, Ikonli, BootstrapFX, TilesFX and FXGL.
+- **Plain-text files** for storage and plain Java sockets for chat.
+
+## Known limitations
+
+- Passwords are saved and compared in plain text. Do not reuse a real password.
+- There is no separate admin role; every logged-in user sees the same screens.
+- The chat server must be started by hand, and the chat client always connects to `localhost`.
+- The project has no automated tests.
+- Data files are plain text without locking, so run only one copy of the app against a folder.
+
+## Contributing
+
+Contributions, issues and feature requests are welcome on the [Issues page](https://github.com/Kairo-2081/LibraryManager/issues).
+
+1. Fork the project.
+2. Create a feature branch: `git checkout -b feature/short-name`
+3. Commit your changes with a clear message.
+4. Push the branch: `git push origin feature/short-name`
+5. Open a pull request.
+
+## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
