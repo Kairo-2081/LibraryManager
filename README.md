@@ -114,6 +114,14 @@ java -cp build/classes/java/main com.example.librarymanager.ChatServer
 
 It prints `Chat Server started on port 12345`. Then launch the app as above. To chat across machines, change the host in `ChatController.java`.
 
+### Build and test
+
+```bash
+./gradlew build
+```
+
+JUnit 5 is configured in `build.gradle.kts`, but the project has no tests yet, so `./gradlew test` has nothing to run.
+
 ## 🛠️ Built With
 
 - **Kotlin / Java** — Core programming languages.
