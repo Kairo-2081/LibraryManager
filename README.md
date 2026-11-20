@@ -2,20 +2,17 @@
 
 BookVerse is a JavaFX desktop application for running a small library. It keeps a book catalogue and member profiles, handles issuing and returning with due dates, charges fines for overdue books, and includes a community chat. Everything is saved to plain-text files, so there is no database to set up.
 
-## 📋 Table of Contents
+## Contents
 
-- [Features](#-features)
-- [Usage Preview](#-usage-preview)
-- [Repository Structure](#-repository-structure)
-- [Data Persistence Format](#-data-persistence-format)
-- [Getting Started](#-getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Running the Application](#running-the-application)
-  - [Building & Testing](#building--testing)
-- [Built With](#%EF%B8%8F-built-with)
-- [Contributing](#-contributing)
-- [License](#-license)
+- [Features](#features)
+- [Using the app](#using-the-app)
+- [Repository structure](#repository-structure)
+- [Data files](#data-files)
+- [Getting started](#getting-started)
+- [Built with](#built-with)
+- [Known limitations](#known-limitations)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## 📋 Features
 
