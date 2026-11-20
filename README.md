@@ -34,13 +34,24 @@ BookVerse is a JavaFX desktop application for running a small library. It keeps 
 5. In **Return**, return the book. If it was overdue, the fine is now fixed and can be paid from the same screen.
 6. Open the **Dashboard** to see your issues, dues and fines at a glance.
 
-## 📁 Repository Structure
+## Repository structure
 
-- `src/main/` — Contains the application source code logic.
-- `library_data.txt` — Plain-text data store for the book catalog.
-- `members.txt` — Plain-text data store for library member profiles.
-- `user_data.txt` — Plain-text data store for application users and administrators.
-- `build.gradle.kts` — Kotlin DSL configuration file for Gradle dependencies and builds.
+```text
+.
+├── src/main/java/com/example/librarymanager/
+│   ├── HelloApplication.java    JavaFX application (the Gradle `run` main class)
+│   ├── Launcher.java            Plain `main` that launches HelloApplication
+│   ├── HelloController.java     Screens, login, issue/return, fines, file handling
+│   ├── Book.java, Member.java   Data models
+│   ├── ChatServer.java          Standalone chat server (port 12345)
+│   └── ChatController.java, ChatService.java, ClientHandler.java   Chat client and server plumbing
+├── src/main/resources/com/example/librarymanager/   FXML views, stylesheet and icons
+├── library_data.txt             Book catalogue
+├── members.txt                  Member profiles
+├── user_data.txt                Login accounts
+├── build.gradle.kts             Gradle build (Kotlin DSL)
+└── gradlew, gradlew.bat         Gradle wrapper
+```
 
 ## 💾 Data Persistence Format
 
