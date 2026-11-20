@@ -137,15 +137,15 @@ JUnit 5 is configured in `build.gradle.kts`, but the project has no tests yet, s
 - The project has no automated tests.
 - Data files are plain text without locking, so run only one copy of the app against a folder.
 
-## 🤝 Contributing
+## Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [Issues page](https://github.com/Kairo-2081/LibraryManager/issues).
+Contributions, issues and feature requests are welcome on the [Issues page](https://github.com/Kairo-2081/LibraryManager/issues).
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Fork the project.
+2. Create a feature branch: `git checkout -b feature/short-name`
+3. Commit your changes with a clear message.
+4. Push the branch: `git push origin feature/short-name`
+5. Open a pull request.
 
 ## 📄 License
 
