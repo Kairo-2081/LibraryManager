@@ -122,10 +122,12 @@ It prints `Chat Server started on port 12345`. Then launch the app as above. To 
 
 JUnit 5 is configured in `build.gradle.kts`, but the project has no tests yet, so `./gradlew test` has nothing to run.
 
-## 🛠️ Built With
+## Built with
 
-- **Kotlin / Java** — Core programming languages.
-- **Gradle** — Build automation and dependency management tool using Kotlin DSL (`build.gradle.kts`).
+- **Java 21** and **JavaFX 21.0.6** (controls, FXML, web, swing, media).
+- **Gradle 8.13** (wrapper) with the Java module, OpenJFX and jlink plugins. A `jlink` runtime image is configured.
+- **Libraries**: ControlsFX, FormsFX, ValidatorFX, Ikonli, BootstrapFX, TilesFX and FXGL.
+- **Plain-text files** for storage and plain Java sockets for chat.
 
 ## 🤝 Contributing
 
