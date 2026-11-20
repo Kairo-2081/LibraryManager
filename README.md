@@ -147,6 +147,6 @@ Contributions, issues and feature requests are welcome on the [Issues page](http
 4. Push the branch: `git push origin feature/short-name`
 5. Open a pull request.
 
-## 📄 License
+## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
