@@ -1,6 +1,6 @@
-# 📚 Library Manager
+# BookVerse: Library Management System
 
-A lightweight, console-based **Library Management System** built with **Kotlin/Java** and managed via the **Gradle** build system. This project demonstrates basic CRUD operations, object-oriented programming principles, and flat-file data persistence without the overhead of a heavy relational database.
+BookVerse is a JavaFX desktop application for running a small library. It keeps a book catalogue and member profiles, handles issuing and returning with due dates, charges fines for overdue books, and includes a community chat. Everything is saved to plain-text files, so there is no database to set up.
 
 ## 📋 Table of Contents
 
