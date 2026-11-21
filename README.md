@@ -244,3 +244,32 @@ flowchart LR
 ├── gradlew, gradlew.bat         Gradle wrapper
 └── docs/tools/render_previews.py  Regenerates the layout previews from the FXML
 ```
+
+## Getting started
+
+### Prerequisites
+
+- JDK 21. The Gradle build requests a Java 21 toolchain.
+- An internet connection on the first run, so Gradle can download itself (8.13), JavaFX 21.0.6 and the libraries.
+
+### Install and run
+
+```bash
+git clone https://github.com/Kairo-2081/LibraryManager.git
+cd LibraryManager
+```
+
+On macOS or Linux:
+
+```bash
+chmod +x gradlew
+./gradlew run
+```
+
+On Windows:
+
+```cmd
+gradlew.bat run
+```
+
+Start the app from the repository root. The data files are opened by relative path, so a different working directory means the app reads and creates its files somewhere else.
