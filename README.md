@@ -84,3 +84,46 @@ numbers shown are made up.
 </td>
 </tr>
 </table>
+
+## Flows
+
+### Issue and return
+
+```mermaid
+flowchart TD
+    A([Reader picks a book and a due date]) --> B{Book available?}
+    B -->|No| X1[Refused]
+    B -->|Yes| C{3 or more books out?}
+    C -->|Yes| X2[Denied: limit reached]
+    C -->|No| D{Total due above 1000 TK?}
+    D -->|Yes| X3[Denied: pay dues first]
+    D -->|No| E[Book marked Issued<br/>due date saved]
+    E --> F([Reader returns the book])
+    F --> G{Returned after the due date?}
+    G -->|No| H[Book Available again]
+    G -->|Yes| I[Fine = overdue days x 60 TK<br/>frozen at return]
+    I --> H
+    I --> J[Reader pays in part or in full<br/>never above the fine]
+```
+
+### Moving around the app
+
+```mermaid
+flowchart LR
+    W[Welcome] --> L[Log in pop-up]
+    W --> S[Sign up pop-up]
+    L --> D[Dashboard]
+    S --> L
+    D --> I[Inventory]
+    D --> M[Members]
+    D --> IS[Issue]
+    D --> R[Return]
+    D --> C[Community chat]
+    M --> P[Membership card]
+```
+
+### The fine, in one line
+
+A book is overdue for `today - due date` days, and each day costs 60 TK. When the
+book is returned the amount is stored, so it stops growing, and it is then paid
+down from the Return screen.
