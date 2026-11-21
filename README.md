@@ -291,3 +291,12 @@ It prints `Chat Server started on port 12345`. Then launch the app as above. To 
 - **Gradle 8.13** (wrapper) with the Java module, OpenJFX and jlink plugins. A `jlink` runtime image is configured.
 - **Libraries**: ControlsFX, FormsFX, ValidatorFX, Ikonli, BootstrapFX, TilesFX and FXGL.
 - **Plain-text files** for storage and plain Java sockets for chat.
+
+## Known limitations
+
+- Passwords are saved and compared in plain text. Do not reuse a real password.
+- There is no separate admin role; every logged-in user sees the same screens.
+- The chat server must be started by hand, and the chat client always connects to `localhost`.
+- The project has no automated tests.
+- Data files are plain text without locking, so run only one copy of the app against a folder.
+- The screen previews in this README are renders of the FXML layouts with sample data, not captures of a running window.
