@@ -24,3 +24,9 @@ files, so there is nothing to install but Java.
 <img src="./.github/assets/readme/bookverse-welcome.jpg" alt="BookVerse welcome screen with log in and sign up buttons" width="800" />
 
 </div>
+
+BookVerse covers the daily work of a small library. A librarian keeps the
+catalogue and the member list, readers borrow up to three books at a time, and
+late returns are fined at a fixed daily rate that stops growing once the book is
+back. A built-in chat room lets members talk to each other. The whole thing is
+about 1,400 lines of Java plus FXML views and one stylesheet.
