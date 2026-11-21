@@ -147,3 +147,24 @@ down from the Return screen.
 4. In **Issue**, find a book, choose a due date and issue it.
 5. In **Return**, return the book. If it was overdue, the fine is now fixed and can be paid from the same screen.
 6. Open the **Dashboard** to see your issues, dues and fines at a glance.
+
+## Data files
+
+The app reads and writes three comma-separated files in the folder it is started from. Fields are split on commas, so a value cannot contain a comma.
+
+| File | One line per | Fields |
+| --- | --- | --- |
+| `library_data.txt` | book | `id,title,author,status,totalIssues,issueDate,dueDate,fine,issuedTo` |
+| `members.txt` | member | `name,profession,issues,contact,mail,fine,freq,blockStatus,totalPaid,totalDue,finedCount,paymentHistory` |
+| `user_data.txt` | account | `email,password` |
+
+Rules for the book file: `status` is `Available` or `Issued`, dates are `yyyy-MM-dd` or `none`, and `issuedTo` holds the member's email or `none`.
+
+Example book lines:
+
+```text
+101,Dune,Frank Herbert,Available,0,none,none,0.0,none
+102,Emma,Jane Austen,Issued,3,2026-04-08,2026-04-14,0.0,jane@example.com
+```
+
+The data files in the repository hold demo records. Passwords in `user_data.txt` are plain text.
