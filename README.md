@@ -202,3 +202,25 @@ erDiagram
 
 Nothing enforces these links in the files themselves; the app matches records by
 the email address.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    subgraph Client[Desktop app]
+        UI[FXML views and style.css] --> HC[HelloController<br/>screens, login, issue, return, fines]
+        HC --> Models[Book and Member models]
+        UI --> CC[ChatController]
+    end
+    Models <-->|read and write| Files[(library_data.txt<br/>members.txt<br/>user_data.txt)]
+    CC <-->|TCP socket, port 12345| CS[ChatServer]
+    CS --> H1[ClientHandler per client]
+```
+
+| Part | Role |
+| --- | --- |
+| `HelloApplication` / `Launcher` | JavaFX entry point (`Launcher` is the plain `main` for packaged runs) |
+| `HelloController` | Every main screen, login and sign-up, issuing, returning and fines |
+| `Book`, `Member` | Data models that read and write their own lines |
+| `ChatServer`, `ClientHandler` | Standalone socket server that fans messages out to connected clients |
+| `ChatController`, `ChatService` | The chat client inside the app |
