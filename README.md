@@ -273,3 +273,14 @@ gradlew.bat run
 ```
 
 Start the app from the repository root. The data files are opened by relative path, so a different working directory means the app reads and creates its files somewhere else.
+
+### Community chat
+
+The chat client connects to `localhost:12345`, so start the chat server first. It uses only the JDK, so you can run it straight from the compiled classes:
+
+```bash
+./gradlew classes
+java -cp build/classes/java/main com.example.librarymanager.ChatServer
+```
+
+It prints `Chat Server started on port 12345`. Then launch the app as above. To chat across machines, change the host in `ChatController.java`.
