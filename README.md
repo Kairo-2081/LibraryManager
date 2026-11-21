@@ -138,3 +138,12 @@ down from the Return screen.
 - **Members**: a member list, a "Become a member" form (name, profession, contact) and a "My Profile Card" view.
 - **Community chat**: a socket-based chat room backed by a small chat server.
 - **Plain-text storage**: books, members and accounts are saved to `.txt` files in the project folder.
+
+## Using the app
+
+1. Start the app (see [Getting started](#getting-started)) and sign up with an email and password, then log in.
+2. Use **Become a member** to create your member profile.
+3. In **Inventory**, add books or sort the catalogue.
+4. In **Issue**, find a book, choose a due date and issue it.
+5. In **Return**, return the book. If it was overdue, the fine is now fixed and can be paid from the same screen.
+6. Open the **Dashboard** to see your issues, dues and fines at a glance.
