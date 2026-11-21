@@ -127,3 +127,14 @@ flowchart LR
 A book is overdue for `today - due date` days, and each day costs 60 TK. When the
 book is returned the amount is stored, so it stops growing, and it is then paid
 down from the Return screen.
+
+## Features
+
+- **Accounts**: sign up and log in with an email and password from pop-up dialogs.
+- **Dashboard**: progress bars for books issued, dues paid and fines.
+- **Inventory**: browse the catalogue, sort it by author, title or availability, and add new books.
+- **Issuing**: search by book name or author and pick a due date. A member can have at most 3 books out at once, and issuing is refused while their total due is above 1000 TK.
+- **Returns and fines**: overdue books are fined 60 TK per day. A fine stops growing once the book is returned, and it can then be paid in full or in part, but never overpaid.
+- **Members**: a member list, a "Become a member" form (name, profession, contact) and a "My Profile Card" view.
+- **Community chat**: a socket-based chat room backed by a small chat server.
+- **Plain-text storage**: books, members and accounts are saved to `.txt` files in the project folder.
