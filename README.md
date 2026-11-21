@@ -310,3 +310,7 @@ Contributions, issues and feature requests are welcome on the [Issues page](http
 3. Commit your changes with a clear message.
 4. Push the branch: `git push origin feature/short-name`
 5. Open a pull request.
+
+## License
+
+Released under the [MIT License](./LICENSE).
