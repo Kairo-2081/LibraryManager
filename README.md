@@ -30,3 +30,15 @@ catalogue and the member list, readers borrow up to three books at a time, and
 late returns are fined at a fixed daily rate that stops growing once the book is
 back. A built-in chat room lets members talk to each other. The whole thing is
 about 1,400 lines of Java plus FXML views and one stylesheet.
+
+## At a glance
+
+| | |
+| --- | --- |
+| **What it is** | A desktop app built with Java 21, JavaFX 21.0.6 and Gradle 8.13 |
+| **Storage** | Three plain-text files, `library_data.txt`, `members.txt` and `user_data.txt`; no database |
+| **Borrowing rules** | At most 3 books out per member, and no new issue while the total due is above 1000 TK |
+| **Fines** | 60 TK per overdue day; the fine freezes on return and can be paid in part or in full, never over |
+| **Chat** | A socket chat server on port 12345 with one handler thread per client |
+| **Screens** | Welcome, dashboard, inventory, issue, return, members, chat and pop-ups for login, sign-up and cards |
+| **Licence** | MIT |
