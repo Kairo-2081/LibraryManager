@@ -224,3 +224,23 @@ flowchart LR
 | `Book`, `Member` | Data models that read and write their own lines |
 | `ChatServer`, `ClientHandler` | Standalone socket server that fans messages out to connected clients |
 | `ChatController`, `ChatService` | The chat client inside the app |
+
+## Repository structure
+
+```text
+.
+├── src/main/java/com/example/librarymanager/
+│   ├── HelloApplication.java    JavaFX application (the Gradle `run` main class)
+│   ├── Launcher.java            Plain `main` that launches HelloApplication
+│   ├── HelloController.java     Screens, login, issue/return, fines, file handling
+│   ├── Book.java, Member.java   Data models
+│   ├── ChatServer.java          Standalone chat server (port 12345)
+│   └── ChatController.java, ChatService.java, ClientHandler.java   Chat client and server plumbing
+├── src/main/resources/com/example/librarymanager/   FXML views, stylesheet and icons
+├── library_data.txt             Book catalogue
+├── members.txt                  Member profiles
+├── user_data.txt                Login accounts
+├── build.gradle.kts             Gradle build (Kotlin DSL)
+├── gradlew, gradlew.bat         Gradle wrapper
+└── docs/tools/render_previews.py  Regenerates the layout previews from the FXML
+```
