@@ -300,3 +300,13 @@ It prints `Chat Server started on port 12345`. Then launch the app as above. To 
 - The project has no automated tests.
 - Data files are plain text without locking, so run only one copy of the app against a folder.
 - The screen previews in this README are renders of the FXML layouts with sample data, not captures of a running window.
+
+## Contributing
+
+Contributions, issues and feature requests are welcome on the [Issues page](https://github.com/Kairo-2081/LibraryManager/issues).
+
+1. Fork the project.
+2. Create a feature branch: `git checkout -b feature/short-name`
+3. Commit your changes with a clear message.
+4. Push the branch: `git push origin feature/short-name`
+5. Open a pull request.
