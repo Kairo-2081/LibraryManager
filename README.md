@@ -168,3 +168,37 @@ Example book lines:
 ```
 
 The data files in the repository hold demo records. Passwords in `user_data.txt` are plain text.
+
+### How the three files relate
+
+```mermaid
+erDiagram
+    ACCOUNT {
+        string email
+        string password
+    }
+    MEMBER {
+        string name
+        string profession
+        string contact
+        string mail
+        int issues
+        double totalDue
+        double totalPaid
+    }
+    BOOK {
+        string id
+        string title
+        string author
+        string status
+        string issueDate
+        string dueDate
+        double fine
+        string issuedTo
+    }
+    ACCOUNT ||--o| MEMBER : "same email"
+    MEMBER ||--o{ BOOK : "issuedTo = mail"
+```
+
+Nothing enforces these links in the files themselves; the app matches records by
+the email address.
