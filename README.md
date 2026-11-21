@@ -31,6 +31,22 @@ late returns are fined at a fixed daily rate that stops growing once the book is
 back. A built-in chat room lets members talk to each other. The whole thing is
 about 1,400 lines of Java plus FXML views and one stylesheet.
 
+## Contents
+
+- [At a glance](#at-a-glance)
+- [Screens](#screens)
+- [Flows](#flows)
+- [Features](#features)
+- [Using the app](#using-the-app)
+- [Data files](#data-files)
+- [Architecture](#architecture)
+- [Repository structure](#repository-structure)
+- [Getting started](#getting-started)
+- [Built with](#built-with)
+- [Known limitations](#known-limitations)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## At a glance
 
 | | |
