@@ -284,3 +284,10 @@ java -cp build/classes/java/main com.example.librarymanager.ChatServer
 ```
 
 It prints `Chat Server started on port 12345`. Then launch the app as above. To chat across machines, change the host in `ChatController.java`.
+
+## Built with
+
+- **Java 21** and **JavaFX 21.0.6** (controls, FXML, web, swing, media).
+- **Gradle 8.13** (wrapper) with the Java module, OpenJFX and jlink plugins. A `jlink` runtime image is configured.
+- **Libraries**: ControlsFX, FormsFX, ValidatorFX, Ikonli, BootstrapFX, TilesFX and FXGL.
+- **Plain-text files** for storage and plain Java sockets for chat.
