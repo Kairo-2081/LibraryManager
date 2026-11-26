@@ -1,0 +1,34 @@
+# Runs BookVerse on a virtual screen, logs in through the login dialog and puts
+# a GIF of it at the top of the README. https://github.com/Kairo-2081/LiveNiro
+name: LiveNiro demo
+
+on:
+  push:
+    branches: [master]
+    paths-ignore: [".liveniro/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Kairo-2081/LiveNiro@v0
+        with:
+          window: Bookverse - Login
+          duration: "14"
+          actions: |
+            wait 1.5
+            click 519 409            # Log In
+            wait 1.5
+            focus Bookverse Login    # the login dialog
+            click 468 227            # email
+            type s
+            click 468 303            # password
+            type s
+            wait 0.5
+            click 408 356            # LOG IN
+            wait 4
