@@ -1,5 +1,5 @@
-# Runs BookVerse on a virtual screen, logs in through the login dialog and puts
-# a GIF of it at the top of the README. https://github.com/Kairo-2081/LiveNiro
+# Runs BookVerse on a virtual screen, logs in and tours every page, and puts a
+# gallery of the scenes and a full walkthrough video at the top of the README. https://github.com/Kairo-2081/LiveNiro
 name: LiveNiro demo
 
 on:
@@ -18,17 +18,44 @@ jobs:
       - uses: actions/checkout@v4
       - uses: Kairo-2081/LiveNiro@v0
         with:
-          window: Bookverse - Login
-          duration: "14"
-          actions: |
-            wait 1.5
+          window: Bookverse
+          # A full tour: welcome, login, then every page in the sidebar and the chat.
+          scenes: |
+            ## Welcome
+            wait 2.5
+
+            ## Log in
             click 537 403            # Log In
             wait 1.5
             focus Bookverse Login    # the login dialog
-            click 468 227            # email
+            click 468 227
             type s
-            click 468 303            # password
+            click 468 303
             type s
             wait 0.5
             click 408 356            # LOG IN
-            wait 4
+
+            ## Dashboard
+            wait 3
+
+            ## Inventory
+            click 120 185
+            wait 3
+
+            ## Members
+            click 120 237
+            wait 3
+
+            ## Issue a book
+            click 120 294
+            wait 3
+
+            ## Return a book
+            click 120 353
+            wait 3
+
+            ## Community chat
+            click 120 127            # back to the dashboard
+            wait 0.8
+            click 820 166            # CHAT
+            wait 3
