@@ -19,6 +19,11 @@ jobs:
       - uses: Kairo-2081/LiveNiro@v0
         with:
           window: Bookverse
+          # Start the chat server first so the Community chat scene has a live conversation.
+          run: |
+            java -cp build/classes/java/main com.example.librarymanager.ChatServer >/dev/null 2>&1 &
+            sleep 1
+            ./gradlew --no-daemon -q run
           # A full tour: welcome, login, then every page in the sidebar and the chat.
           scenes: |
             ## Welcome
@@ -58,4 +63,11 @@ jobs:
             click 120 127            # back to the dashboard
             wait 0.8
             click 820 166            # CHAT
-            wait 3
+            wait 1
+            # another member joins and posts while the demo user watches
+            sh (exec 3<>/dev/tcp/127.0.0.1/12345; sleep 0.6; echo "Abir: Has anyone finished The Alchemist yet?" >&3; sleep 2.2; echo "Lamine: Yes! Returning it tomorrow, it's great." >&3; sleep 6) >/dev/null 2>&1 &
+            wait 3.6
+            click 414 515            # message box
+            type Reserving it next, thanks!
+            key Return
+            wait 2.5
