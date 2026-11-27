@@ -22,7 +22,7 @@ jobs:
           duration: "14"
           actions: |
             wait 1.5
-            click 519 409            # Log In
+            click 555 394            # Log In
             wait 1.5
             focus Bookverse Login    # the login dialog
             click 468 227            # email
