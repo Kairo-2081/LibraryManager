@@ -21,7 +21,9 @@ files, so there is nothing to install but Java.
 [Architecture](#architecture) ·
 [Get started](#getting-started)
 
+<!-- liveniro:start -->
 <img src="./.github/assets/readme/bookverse-welcome.jpg" alt="BookVerse welcome screen with log in and sign up buttons" width="800" />
+<!-- liveniro:end -->
 
 </div>
 
