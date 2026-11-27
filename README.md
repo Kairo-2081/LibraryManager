@@ -22,7 +22,10 @@ files, so there is nothing to install but Java.
 [Get started](#getting-started)
 
 <!-- liveniro:start -->
-<img src="./.github/assets/readme/bookverse-welcome.jpg" alt="BookVerse welcome screen with log in and sign up buttons" width="800" />
+<p align="center">
+  <a href=".liveniro/demo.mp4"><img src=".liveniro/demo.gif" alt="Live demo of this project, recorded by LiveNiro" width="800"></a>
+  <br><sub>Recorded automatically by <a href="https://github.com/Kairo-2081/LiveNiro">LiveNiro</a> on every push · <a href=".liveniro/demo.mp4">watch the MP4</a></sub>
+</p>
 <!-- liveniro:end -->
 
 </div>
