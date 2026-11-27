@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
@@ -34,109 +37,139 @@
                   <Font name="Bookman Old Style" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="363.0" layoutY="190.0" prefHeight="34.0" prefWidth="191.0" text="Version 1.0 Now Live" textFill="#cbefeb">
-               <font>
-                  <Font name="Britannic Bold" size="19.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="41.0" fitWidth="39.0" layoutX="324.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@icons/2419-9ff351c8d3c2dcbe30da81041c911438a6559890b83490e3a1fd55f8e3b4fc06-removebg-preview.png" />
-               </image>
-            </ImageView>
-            <Label alignment="CENTER" layoutX="263.0" layoutY="224.0" text="Library Management ">
-               <font>
-                  <Font name="Century Gothic Bold" size="35.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.7960784435272217" green="0.9372549057006836" blue="0.9215686321258545" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.7461555004119873" green="0.9298245906829834" blue="0.9083964824676514" opacity="0.9700000286102295" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Label>
-            <Label layoutX="334.0" layoutY="259.0" prefHeight="62.0" prefWidth="206.0" text="Reimagined">
-               <font>
-                  <Font name="Century Gothic Bold" size="35.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.7960784435272217" green="0.9372549057006836" blue="0.9215686321258545" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.7461555004119873" green="0.9298245906829834" blue="0.9083964824676514" opacity="0.9700000286102295" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Label>
-            <Label layoutX="175.0" layoutY="321.0" prefHeight="21.0" prefWidth="581.0" text="A modern, secure and scalable platform for managing libraries." textFill="#caede9f7">
-               <font>
-                  <Font name="Candara" size="22.0" />
-               </font>
-            </Label>
-            <Label layoutX="230.0" layoutY="356.0" text="From donating books to issue -return of books-everything in one place!!" textFill="#caede9f7">
-               <font>
-                  <Font name="Candara" size="14.0" />
-               </font>
-            </Label>
             <ImageView fitHeight="137.0" fitWidth="138.0" layoutX="374.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@icons/Screenshot_2026-02-19_083955-removebg-preview.png" />
                </image>
             </ImageView>
-            <Label layoutX="276.0" layoutY="401.0" text="Already Have an account??" textFill="#caede9f7">
-               <font>
-                  <Font name="Calisto MT Bold" size="16.0" />
-               </font>
-            </Label>
-            <Button layoutX="475.0" layoutY="396.0" mnemonicParsing="false" onAction="#onLoginClick" prefHeight="26.0" prefWidth="88.0" styleClass="add" text="Log In">
-               <font>
-                  <Font name="Algerian" size="12.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="0.897727243828051" endY="1.0" startX="0.8939393948424946" startY="0.2803030158534195">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="1.0" green="1.0" blue="1.0" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.7208144068717957" green="0.9122806787490845" blue="0.8899429440498352" opacity="0.9700000286102295" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Button>
-            <Label layoutX="287.0" layoutY="451.0" text="Don't Have an account??" textFill="#caede9f7">
-               <font>
-                  <Font name="Calisto MT Bold" size="16.0" />
-               </font>
-            </Label>
-            <Button layoutX="475.0" layoutY="446.0" mnemonicParsing="false" onAction="#onSignUpClick" prefHeight="26.0" prefWidth="88.0" styleClass="add" text="Sign up" textFill="WHITE">
-               <font>
-                  <Font name="Algerian" size="12.0" />
-               </font>
-            </Button>
+            <!-- Centre column: a centred stack, so text is never cut off when a font is missing
+                 (the Office fonts below fall back to wider ones on Linux, macOS and Windows without Office). -->
+            <VBox alignment="TOP_CENTER" layoutY="188.0" prefWidth="880.0">
+               <children>
+                  <HBox alignment="CENTER" spacing="2.0">
+                     <children>
+                        <ImageView fitHeight="41.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/2419-9ff351c8d3c2dcbe30da81041c911438a6559890b83490e3a1fd55f8e3b4fc06-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Version 1.0 Now Live" textFill="#cbefeb">
+                           <font>
+                              <Font name="Britannic Bold" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Label text="Library Management ">
+                     <VBox.margin>
+                        <Insets top="-4" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Century Gothic Bold" size="35.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.7960784435272217" green="0.9372549057006836" blue="0.9215686321258545" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.7461555004119873" green="0.9298245906829834" blue="0.9083964824676514" opacity="0.9700000286102295" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label text="Reimagined">
+                     <VBox.margin>
+                        <Insets top="-8" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Century Gothic Bold" size="35.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.7960784435272217" green="0.9372549057006836" blue="0.9215686321258545" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.7461555004119873" green="0.9298245906829834" blue="0.9083964824676514" opacity="0.9700000286102295" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label text="A modern, secure and scalable platform for managing libraries." textFill="#caede9f7">
+                     <VBox.margin>
+                        <Insets top="10" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Candara" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label text="From donating books to issue -return of books-everything in one place!!" textFill="#caede9f7">
+                     <VBox.margin>
+                        <Insets top="12" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Candara" size="14.0" />
+                     </font>
+                  </Label>
+                  <!-- Labels right-aligned, buttons in one column, so Log In and Sign up line up. -->
+                  <GridPane alignment="CENTER" hgap="10.0" vgap="22.0">
+                     <VBox.margin>
+                        <Insets top="22.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label GridPane.halignment="RIGHT" GridPane.rowIndex="0" text="Already Have an account??" textFill="#caede9f7">
+                           <font>
+                              <Font name="Calisto MT Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button GridPane.columnIndex="1" GridPane.rowIndex="0" mnemonicParsing="false" onAction="#onLoginClick" prefHeight="26.0" prefWidth="88.0" styleClass="add" text="Log In">
+                           <font>
+                              <Font name="Algerian" size="12.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="0.897727243828051" endY="1.0" startX="0.8939393948424946" startY="0.2803030158534195">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.7208144068717957" green="0.9122806787490845" blue="0.8899429440498352" opacity="0.9700000286102295" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Button>
+                        <Label GridPane.halignment="RIGHT" GridPane.rowIndex="1" text="Don't Have an account??" textFill="#caede9f7">
+                           <font>
+                              <Font name="Calisto MT Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button GridPane.columnIndex="1" GridPane.rowIndex="1" mnemonicParsing="false" onAction="#onSignUpClick" prefHeight="26.0" prefWidth="88.0" styleClass="add" text="Sign up" textFill="WHITE">
+                           <font>
+                              <Font name="Algerian" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
             <ImageView fitHeight="188.0" fitWidth="318.0" layoutX="630.0" layoutY="367.0" opacity="0.32" pickOnBounds="true" preserveRatio="true" translateX="4.0" translateY="3.0">
                <image>
                   <Image url="@icons/book-and-reading-statistics-min-removebg-preview.png" />
