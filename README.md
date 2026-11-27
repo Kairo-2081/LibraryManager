@@ -22,9 +22,51 @@ files, so there is nothing to install but Java.
 [Get started](#getting-started)
 
 <!-- liveniro:start -->
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<img src=".liveniro/demo-01-welcome.gif" alt="1. Welcome, recorded by LiveNiro" width="100%"><br>
+<b>1 · Welcome</b>
+</td>
+<td width="50%" valign="top" align="center">
+<img src=".liveniro/demo-02-log-in.gif" alt="2. Log in, recorded by LiveNiro" width="100%"><br>
+<b>2 · Log in</b>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top" align="center">
+<img src=".liveniro/demo-03-dashboard.gif" alt="3. Dashboard, recorded by LiveNiro" width="100%"><br>
+<b>3 · Dashboard</b>
+</td>
+<td width="50%" valign="top" align="center">
+<img src=".liveniro/demo-04-inventory.gif" alt="4. Inventory, recorded by LiveNiro" width="100%"><br>
+<b>4 · Inventory</b>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top" align="center">
+<img src=".liveniro/demo-05-members.gif" alt="5. Members, recorded by LiveNiro" width="100%"><br>
+<b>5 · Members</b>
+</td>
+<td width="50%" valign="top" align="center">
+<img src=".liveniro/demo-06-issue-a-book.gif" alt="6. Issue a book, recorded by LiveNiro" width="100%"><br>
+<b>6 · Issue a book</b>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top" align="center">
+<img src=".liveniro/demo-07-return-a-book.gif" alt="7. Return a book, recorded by LiveNiro" width="100%"><br>
+<b>7 · Return a book</b>
+</td>
+<td width="50%" valign="top" align="center">
+<img src=".liveniro/demo-08-community-chat.gif" alt="8. Community chat, recorded by LiveNiro" width="100%"><br>
+<b>8 · Community chat</b>
+</td>
+</tr>
+</table>
 <p align="center">
-  <a href=".liveniro/demo.mp4"><img src=".liveniro/demo.gif" alt="Live demo of this project, recorded by LiveNiro" width="800"></a>
-  <br><sub>Recorded automatically by <a href="https://github.com/Kairo-2081/LiveNiro">LiveNiro</a> on every push · <a href=".liveniro/demo.mp4">watch the MP4</a></sub>
+  <a href=".liveniro/demo-tour.mp4"><b>▶ Watch the full walkthrough</b></a> (MP4 · 0:26 · chapters)
+  <br><sub>Recorded automatically by <a href="https://github.com/Kairo-2081/LiveNiro">LiveNiro</a> on every push</sub>
 </p>
 <!-- liveniro:end -->
 
