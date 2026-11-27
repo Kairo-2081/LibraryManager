@@ -65,7 +65,7 @@ files, so there is nothing to install but Java.
 </tr>
 </table>
 <p align="center">
-  <a href=".liveniro/demo-tour.mp4"><b>▶ Watch the full walkthrough</b></a> (MP4 · 0:26 · chapters)
+  <a href=".liveniro/demo-tour.mp4"><b>▶ Watch the full walkthrough</b></a> (MP4 · 0:31 · chapters)
   <br><sub>Recorded automatically by <a href="https://github.com/Kairo-2081/LiveNiro">LiveNiro</a> on every push</sub>
 </p>
 <!-- liveniro:end -->
